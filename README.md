@@ -60,3 +60,9 @@
    - **大單操弄**：機構大單交易導致有時候技術形態失真
 
 綜上所述，雖然模型具備一定的理論預測能力，但由於受到市場內在複雜性和外部因素的影響，其實際應用效果仍有待進一步提升。
+
+## 安裝
+
+```
+pip install pandas numpy matplotlib scikit-learn torch tqdm
+```
