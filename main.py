@@ -245,7 +245,7 @@ def predict_next_day(model, dataset, df, seq_length=20):
 # 4. 主程序
 if __name__ == "__main__":
     # 参数设置
-    SEQ_LENGTH = 30  # 使用20天歷史數據
+    SEQ_LENGTH = 30  # 使用30天歷史數據
     INPUT_SIZE = 11  # 特徵數: Pct_Change, upper_shadow_ratio, lower_shadow_ratio, price_diff_ratio, Vol_Pct_Change, RSI_7, RSI_14, DIF, DEA, MACD
     HIDDEN_SIZE = 64  # 隱藏單元大小
     NUM_LAYERS = 2
