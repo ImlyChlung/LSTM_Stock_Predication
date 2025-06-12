@@ -221,7 +221,7 @@ def predict_next_day(model, dataset, df, seq_length=20):
     """
     # 1. 準備最新的序列數據
     # 取得最後seq_length天的數據
-    features = ['Pct_Change','Vol_Pct_Change', 'RSI_7', 'RSI_14', 'DIF', 'DEA', 'MACD','upper_shadow_ratio', 'lower_shadow_ratio', 'price_diff_ratio','^VIX']
+    features = ['Pct_Change','upper_shadow_ratio', 'lower_shadow_ratio', 'price_diff_ratio', 'Vol_Pct_Change', 'RSI_7', 'RSI_14', 'DIF', 'DEA', 'MACD','^VIX']
     latest_data = df[features].tail(seq_length).values
 
     # 2. 應用相同的歸一化處理
