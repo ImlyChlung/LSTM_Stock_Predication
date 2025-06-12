@@ -50,5 +50,5 @@ if __name__ == "__main__":
     k_line = indicator.K_line(full_data)
 
     indicator_df = pd.concat([full_data, pct_change, k_line, vol_pct_change, rsi, macd, vix], axis=1)
-    indicator_df = indicator_df.round(2)
+    indicator_df = indicator_df.round(4)
     indicator_df.to_csv('indicator.csv')
