@@ -244,8 +244,8 @@ def predict_next_day(model, dataset, df, seq_length=20):
 
 # 4. 主程序
 if __name__ == "__main__":
-    # 参数设置
-    SEQ_LENGTH = 30  # 使用30天歷史數據
+    # 參數設定
+    SEQ_LENGTH = 10  # 使用10天歷史數據
     INPUT_SIZE = 11  # 特徵數: Pct_Change, upper_shadow_ratio, lower_shadow_ratio, price_diff_ratio, Vol_Pct_Change, RSI_7, RSI_14, DIF, DEA, MACD
     HIDDEN_SIZE = 64  # 隱藏單元大小
     NUM_LAYERS = 2
@@ -290,7 +290,7 @@ if __name__ == "__main__":
     print(f"\n測試集準確率: {test_results['test_acc']:.4f}")
     print(f"測試集損失: {test_results['test_loss']:.4f}")
 
-    # 预测方向：預測函數將傳回 0, 1 或 2
+    # 預測方向：預測函數將傳回 0, 1 或 2
     df = pd.read_csv('indicator.csv', parse_dates=['Date'])
 
     next_direction_pred = predict_next_day(trained_model, dataset, df, SEQ_LENGTH)
