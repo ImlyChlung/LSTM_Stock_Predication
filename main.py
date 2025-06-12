@@ -208,7 +208,7 @@ def train_and_evaluate(model, dataset, epochs=100, lr=0.001):
 
 def predict_next_day(model, dataset, df, seq_length=20):
     """
-     使用訓練好的模型預測下一日的Pct_Change
+     使用訓練好的模型預測趨勢
 
      參數:
      model: 訓練好的LSTM模型
@@ -217,7 +217,7 @@ def predict_next_day(model, dataset, df, seq_length=20):
      seq_length: 序列長度(與訓練時相同)
 
      返回:
-     next_day_pred: 下一天的預測百分比變化
+     next_day_pred: 預測趨勢
     """
     # 1. 準備最新的序列數據
     # 取得最後seq_length天的數據
