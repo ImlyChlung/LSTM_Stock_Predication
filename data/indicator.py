@@ -170,33 +170,15 @@ def BOLL(close_prices, extended_prices, window=20, k=2):
 
 # OBV 能量潮指标
 def OBV(close_prices, volume):
-    """
-    计算OBV(On-Balance Volume)指标
-    规则:
-      - 如果当日收盘价 > 前一日收盘价: OBV = 前一日OBV + 当日成交量
-      - 如果当日收盘价 < 前一日收盘价: OBV = 前一日OBV - 当日成交量
-      - 如果当日收盘价 = 前一日收盘价: OBV = 前一日OBV
-      - 初始OBV = 第一个交易日的成交量
-
-    参数:
-      close_prices: 收盘价序列 (pd.Series)
-      volume: 成交量序列 (pd.Series)
-
-    返回:
-      OBV: 包含OBV值的DataFrame
-    """
-
-    # 计算价格变化方向
+    # 計算價格變動方向
     price_diff = close_prices.diff()
 
-    # 创建符号序列 (上涨:1, 下跌:-1, 平盘:0)
+    # 創建符號序列 (上漲:1, 下跌:-1, 平盤:0)
     direction = np.sign(price_diff)
     direction.iloc[0] = 1  # 第一个交易日视为上涨
 
-    # 计算OBV
     obv = (direction * volume).cumsum()
 
-    # 转换为DataFrame
     OBV = obv.to_frame(name='OBV')
 
     return OBV
