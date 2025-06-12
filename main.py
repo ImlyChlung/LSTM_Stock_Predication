@@ -206,7 +206,7 @@ def train_and_evaluate(model, dataset, epochs=100, lr=0.001):
     }
 
 
-def predict_next_day(model, dataset, df, seq_length=20):
+def predict_next_day(model, dataset, df, seq_length):
     """
      使用訓練好的模型預測趨勢
 
